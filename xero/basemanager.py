@@ -186,7 +186,7 @@ class BaseManager(object):
 
             response = getattr(requests, method)(
                     uri, data=body, headers=headers, auth=self.credentials.oauth,
-                    params=params, timeout=timeout)
+                    params=params, timeout=30)
 
             if response.status_code == 200:
                 # If we haven't got XML or JSON, assume we're being returned a binary file
